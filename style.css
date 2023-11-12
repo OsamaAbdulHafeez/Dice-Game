@@ -1,0 +1,183 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    background-image: linear-gradient(to right ,#b1282f,#6c3175);
+    /* height: 100vh; */
+}
+.welcome h1{
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    top: 2rem;
+    right: 37%;
+    /* left: 50%; */
+}
+/* Form */
+.form,.form2{
+    background-color: #fff;
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 2rem 1rem 1rem 1rem;
+    border-radius: 10px;
+    position: absolute;
+    right: 35%;
+    top: -13rem;
+    z-index: 2;
+    transition: 1s;
+}
+
+.form h2,.form2 h2{
+    color: #b1282f;
+    text-align: center;
+    padding-bottom: 14px;
+    text-transform: uppercase;
+}
+.form input,.form2 input{
+    height: 40px;
+    width: 20vw;
+    margin: 10px auto 10px auto;
+    border-radius: 10px;
+    border:  2px solid #ae6d8d;
+    font-size: 22px;
+    color: #b1282f;
+    padding-left: 10px;
+}
+.form input:focus,.form2 input:focus{
+    outline: none;
+    
+}
+.form button,.form2 button{
+    background-color: #b1282f;
+    border: none;
+    width: 10vw;
+    margin: 0 auto;
+    color: #fff;
+    font-size: 22px;
+    margin-top: 10px;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+.game{
+    width: 60vw;
+    height: 86vh;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    padding-top: 6.5rem;
+    position: relative;
+}
+.player1{
+    background-color: #d6a4af;
+    width: 50%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.style{
+    background-color: #b1282f;
+    color: #fff;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 10px 30px;
+    border-radius: 50px;
+    margin-top: -20px;
+}
+.player1,.player2{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    padding-top: 4rem;
+    visibility: hidden;
+}
+.player1 h1,.player2 h1{
+    text-transform: uppercase;
+    font-weight: 400;
+}
+.player1 h3,.player2 h3{
+    font-size: 4rem;
+    color: #bf2e57;
+    font-weight: 300;
+}
+#current{
+    background-color: #bf2e57;
+    height: 15vh;
+    width: 30%;
+    margin: 0 auto;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 4rem;
+}
+#current h2{
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-size: 16px;
+    text-align: center;
+    padding-top: 10px;
+}
+#current h5{
+    font-size: 34px;
+    text-align: center;
+    color: #fff;
+    padding-bottom: 10px;
+    font-weight: 100;
+}
+.player2{
+    background-color: #ae6d8d;
+    width: 50%;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.buttons{
+    display: flex;
+    position: absolute;
+    padding-top: 20px;
+    flex-direction: column;
+    height: 70vh;
+    justify-content: space-between;
+}
+#newGame,#rollDies,#hold{
+    background-image: linear-gradient(to right,#f6f0f2,#d1c7ca);
+    border-radius: 20px;
+    padding: 10px 20px;
+    display: flex;
+    cursor: pointer;
+}
+#Dies{
+    border-radius: 20px;
+    padding: 10px 20px;
+    display: flex;
+    cursor: pointer;
+}
+#Dies img{
+    width: 100px;
+    margin: auto;
+}
+.rollandHold{
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 1.5rem;
+    visibility: hidden;
+}
+#newGame h4,#rollDies h4{
+    font-weight: 600;
+    align-self: center;
+}
+#newGame img,#rollDies img,#hold img{
+    width: 20px;
+    margin-right: 10px;
+}
+#hold h4{
+    margin-left: 15px;
+}
+
