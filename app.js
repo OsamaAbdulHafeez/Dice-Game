@@ -27,7 +27,8 @@ const Dies = document.querySelector('#Dies').firstElementChild
 firstPlayer.classList.add('style')
 // NewGame Function
 newGame.addEventListener('click', () => {
-    form.style.top = "14rem"
+    form.style.top = "16rem"
+    newGame.childNodes[3].textContent = "AGAIN"
 })
 // PlayerOne Name Function
 player1Submit.addEventListener('click', () => {
@@ -37,8 +38,8 @@ player1Submit.addEventListener('click', () => {
     else {
         firstPlayer.textContent = player1Name.value
         player1Name.value = ""
-        form.style.top = "-14rem"
-        form2.style.top = "14rem"
+        form.style.top = "-16rem"
+        form2.style.top = "16rem"
         player1.style.visibility = "visible"
     }
 })
@@ -50,7 +51,7 @@ player2Submit.addEventListener('click', () => {
     else {
         secondPlayer.textContent = player2Name.value
         player2Name.value = ""
-        form2.style.top = "-14rem"
+        form2.style.top = "-16rem"
         player2.style.visibility = "visible"
         rollandHold.style.visibility = "visible"
     }
@@ -59,22 +60,26 @@ player2Submit.addEventListener('click', () => {
 rollDies.addEventListener('click', () => {
     random = Math.ceil(Math.random() * 6)
     Dies.src = `./Assets/Images/${random}.png`
-    
+
     if (random == 1) {
-        if(playerone){
+        if (playerone) {
             playerone = false
             Player1CurScore.textContent = 0
             player1TotScore.textContent = 0
-            firstPlayer.classList.remove('style')
             // Dies.src = ""
             currentScore1 = 0
+            TotalScore1 = 0
+            firstPlayer.classList.remove('style')
+            secondPlayer.classList.add('style')
         }
-        else{
+        else {
             Player2CurScore.textContent = 0
             playerone = true
             player2TotScore.textContent = 0
-            secondPlayer.classList.remove('style')
             currentScore2 = 0
+            TotalScore2 = 0
+            secondPlayer.classList.remove('style')
+            firstPlayer.classList.add('style') 
             // Dies.src = ""
         }
         // Player2CurScore.textContent = Player1CurScore.textContent
@@ -82,6 +87,7 @@ rollDies.addEventListener('click', () => {
     else {
         if (playerone) {
             Player1CurScore.textContent = currentScore1 += random
+            
         }
         else {
             Player2CurScore.textContent = currentScore2 += random
@@ -93,17 +99,19 @@ rollDies.addEventListener('click', () => {
 // Hold Function
 hold.addEventListener('click', () => {
     if (playerone) {
-        player1TotScore.textContent = TotalScore1+= +Player1CurScore.textContent
+        player1TotScore.textContent = TotalScore1 += +Player1CurScore.textContent
         Player1CurScore.textContent = 0
         playerone = false
         Dies.src = ""
         currentScore1 = 0
-        
         firstPlayer.classList.remove('style')
         secondPlayer.classList.add('style')
+        if(TotalScore1 == 20){
+            alert(`${firstPlayer}Won`)
+        }
     }
     else {
-        player2TotScore.textContent = TotalScore2+= +Player2CurScore.textContent
+        player2TotScore.textContent = TotalScore2 += +Player2CurScore.textContent
         Player2CurScore.textContent = 0
         playerone = true
         Dies.src = ""

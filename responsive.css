@@ -1,0 +1,97 @@
+@media screen and (max-width:1200px){
+    .player1 h1,.player2 h1{
+        margin-top: 1rem;
+    }
+}
+@media screen and (max-width:1080px){
+    .form,.form2{
+        right: 32%;
+    }
+    .welcome{
+        /* padding-top: 4rem; */
+        font-size: 1rem;
+    }
+    .game{
+        width: 80vw;
+        height: 80vh;
+        
+    }
+    .buttons{
+        height: 73vh;
+    }
+    .player1 h1,.player2 h1{
+        margin-top: 1rem;
+    }
+}
+@media screen and (max-width:910px){
+    .form,.form2{
+        right: 27%;
+    }
+}
+@media screen and (max-width:810px){
+    .form,.form2{
+        right: 24%;
+    }
+}
+
+@media screen and (max-width:768px){
+    .form,.form2{
+        right: 20%;
+    }
+    .welcome{
+        /* padding-top: 4rem;
+        font-size: 1.7rem; */
+    }
+    .game{
+        width: 90vw;
+        height: 85vh;
+        
+    }
+    .buttons{
+        height: 79vh;
+    }
+    .player1 h1,.player2 h1{
+        text-transform: uppercase;
+        font-weight: 400;
+        font-size: 28px;
+    }
+    #current{
+        margin-right: auto;
+        margin-left: 30px;
+    }
+    #current2{
+        margin-right: 30px;
+        margin-left: auto;
+    }
+    .rollandHold{
+        height: 120px;
+    }
+    #newGame h4,#rollDies h4,#hold h4{
+        font-size: 24px;
+    }
+}
+@media screen and (max-width:610px){
+    .form,.form2{
+        right:14%;
+    }
+}
+@media screen and (max-width:580px){
+    .form,.form2{
+        right: 10%;
+    }
+    #current{
+        margin: 0 auto;
+        margin-bottom: 10rem;
+    }
+    #current2{
+        margin: 0 auto;
+        margin-bottom: 10rem;
+    }
+}
+@media screen and (max-width:475px){
+    .form,.form2{
+        right:0;
+        width: 100%;
+        padding: 2rem;
+    }
+}
