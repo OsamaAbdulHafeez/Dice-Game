@@ -139,7 +139,7 @@ hold.addEventListener('click', () => {
             TotalScore1 = 0
             TotalScore2 = 0
             // alert("hello")
-            newGame.style.visibility = "visible"
+            newGame.style.display = "flex"
         }
     }
     else {
@@ -163,7 +163,7 @@ hold.addEventListener('click', () => {
             currentScore2 = 0
             TotalScore1 = 0
             TotalScore2 = 0
-            newGame.style.visibility = "visible"
+            newGame.style.display = "flex"
         }
     }
 })
