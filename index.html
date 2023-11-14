@@ -27,6 +27,7 @@
     <div class="game">
         <div class="player1">
             <h1 id="firstPlayer" class="">Player 1</h1>
+           
             <h3 id="player1TotScore">0</h3>
             <div id="current">
                 <h2>CURRENT</h2>
@@ -42,13 +43,20 @@
             </div>
         </div>
         <div class="buttons">
-            <div id="newGame">
-                <img src="./Assets/Images/Reload.png" alt="">
-                <h4>NEW GAME</h4>
+            <div class="newGameAndReset">
+                <div id="newGame">
+                    <img src="./Assets/Images/Reload.png" alt="">
+                    <h4>NEW GAME</h4>
+                </div>
+                <div id="reset">
+                    <img src="./Assets/Images/Reload.png" alt="">
+                    <h4>RESET</h4>
+                </div>
             </div>
             <div id="Dies">
                 <img src="" alt="">
             </div>
+            
             <div class="rollandHold">
                 <div id="rollDies">
                     <img src="./Assets/Images/Dies.png" alt="">
@@ -59,6 +67,9 @@
                     <h4>HOLD</h4>
                 </div>
             </div>
+        </div>
+        <div class="wining">
+            <h2>Player One has Won</h2>
         </div>
     </div>
     <script src="app.js"></script>

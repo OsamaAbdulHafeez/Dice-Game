@@ -65,10 +65,14 @@
     }
     .rollandHold{
         height: 120px;
+        padding-bottom: 1rem;
     }
-    #newGame h4,#rollDies h4,#hold h4{
+    #Dies img{
+        width: 80px;
+    }
+    /* #newGame h4,#rollDies h4,#hold h4{
         font-size: 24px;
-    }
+    } */
 }
 @media screen and (max-width:610px){
     .form,.form2{
@@ -81,11 +85,18 @@
     }
     #current{
         margin: 0 auto;
-        margin-bottom: 10rem;
+        margin-bottom: 8rem;
     }
     #current2{
         margin: 0 auto;
-        margin-bottom: 10rem;
+        margin-bottom: 8rem;
+    }
+    #Dies img{
+        width: 65px;
+        margin-top: -6rem;
+    }
+    .rollandHold{
+        padding-bottom: 1rem;
     }
 }
 @media screen and (max-width:475px){

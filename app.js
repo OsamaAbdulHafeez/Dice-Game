@@ -2,7 +2,10 @@ let playerone = true
 const player1 = document.querySelector('.player1')
 const player2 = document.querySelector('.player2')
 
+
 const newGame = document.querySelector('#newGame')
+const reset = document.querySelector('#reset')
+const wining = document.querySelector('.wining')
 const form = document.querySelector('.form')
 const form2 = document.querySelector('.form2')
 const player1Name = document.querySelector('#player1Name')
@@ -28,7 +31,21 @@ firstPlayer.classList.add('style')
 // NewGame Function
 newGame.addEventListener('click', () => {
     form.style.top = "16rem"
-    newGame.childNodes[3].textContent = "AGAIN"
+})
+
+reset.addEventListener('click', () => {
+    // newGame.style.visibility = "visible"
+    newGame.style.display = "flex"
+    player1.style.visibility = "hidden"
+    player2.style.visibility = "hidden"
+    rollandHold.style.visibility = "hidden"
+    reset.style.visibility = "hidden"
+    player1TotScore.textContent = 0
+    player2TotScore.textContent = 0
+    currentScore1 = 0
+    currentScore2 = 0
+    TotalScore1 = 0
+    TotalScore2 = 0
 })
 // PlayerOne Name Function
 player1Submit.addEventListener('click', () => {
@@ -54,6 +71,8 @@ player2Submit.addEventListener('click', () => {
         form2.style.top = "-16rem"
         player2.style.visibility = "visible"
         rollandHold.style.visibility = "visible"
+        newGame.style.display = "none"
+        reset.style.visibility = "visible"
     }
 })
 // Roll Dies Function
@@ -65,21 +84,21 @@ rollDies.addEventListener('click', () => {
         if (playerone) {
             playerone = false
             Player1CurScore.textContent = 0
-            player1TotScore.textContent = 0
+            // player1TotScore.textContent = 0
             // Dies.src = ""
             currentScore1 = 0
-            TotalScore1 = 0
+            // TotalScore1 = 0
             firstPlayer.classList.remove('style')
             secondPlayer.classList.add('style')
         }
         else {
             Player2CurScore.textContent = 0
             playerone = true
-            player2TotScore.textContent = 0
+            // player2TotScore.textContent = 0
             currentScore2 = 0
-            TotalScore2 = 0
+            // TotalScore2 = 0
             secondPlayer.classList.remove('style')
-            firstPlayer.classList.add('style') 
+            firstPlayer.classList.add('style')
             // Dies.src = ""
         }
         // Player2CurScore.textContent = Player1CurScore.textContent
@@ -87,7 +106,7 @@ rollDies.addEventListener('click', () => {
     else {
         if (playerone) {
             Player1CurScore.textContent = currentScore1 += random
-            
+
         }
         else {
             Player2CurScore.textContent = currentScore2 += random
@@ -106,8 +125,21 @@ hold.addEventListener('click', () => {
         currentScore1 = 0
         firstPlayer.classList.remove('style')
         secondPlayer.classList.add('style')
-        if(TotalScore1 == 20){
-            alert(`${firstPlayer}Won`)
+        if (TotalScore1 >= 50) {
+            wining.style.visibility = "visible"
+            wining.firstElementChild.textContent = `${firstPlayer.textContent} Has Won`
+            player1.style.visibility = "hidden"
+            player2.style.visibility = "hidden"
+            rollandHold.style.visibility = "hidden"
+            reset.style.visibility = "hidden"
+            player1TotScore.textContent = 0
+            player2TotScore.textContent = 0
+            currentScore1 = 0
+            currentScore2 = 0
+            TotalScore1 = 0
+            TotalScore2 = 0
+            // alert("hello")
+            newGame.style.visibility = "visible"
         }
     }
     else {
@@ -118,8 +150,24 @@ hold.addEventListener('click', () => {
         currentScore2 = 0
         secondPlayer.classList.remove('style')
         firstPlayer.classList.add('style')
+        if(TotalScore2>=50){
+            wining.style.visibility = "visible"
+            wining.firstElementChild.textContent = `${secondPlayer.textContent} Has Won`
+            player1.style.visibility = "hidden"
+            player2.style.visibility = "hidden"
+            rollandHold.style.visibility = "hidden"
+            reset.style.visibility = "hidden"
+            player1TotScore.textContent = 0
+            player2TotScore.textContent = 0
+            currentScore1 = 0
+            currentScore2 = 0
+            TotalScore1 = 0
+            TotalScore2 = 0
+            newGame.style.visibility = "visible"
+        }
     }
 })
+
 // if(playerone){
 //     firstPlayer.classList.add('style')
 // }

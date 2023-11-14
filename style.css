@@ -1,8 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&display=swap');
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: Agbalumo;
 }
 body{
     background-image: linear-gradient(to right ,#b1282f,#6c3175);
@@ -80,9 +81,8 @@ body{
     color: #fff;
     width: fit-content;
     margin: 0 auto;
-    
     border-radius: 50px;
-    margin-top: -20px;
+    /* margin-top: -20px; */
 }
 .player1,.player2{
     display: flex;
@@ -154,12 +154,15 @@ body{
     height: 70vh;
     justify-content: space-between;
 }
-#newGame,#rollDies,#hold{
+#newGame,#rollDies,#hold,#reset{
     background-image: linear-gradient(to right,#f6f0f2,#d1c7ca);
     border-radius: 20px;
     padding: 10px 20px;
     display: flex;
     cursor: pointer;
+}
+#reset{
+    visibility: hidden;
 }
 #Dies{
     border-radius: 20px;
@@ -179,15 +182,34 @@ body{
     padding-bottom: .5rem;
     visibility: hidden;
 }
-#newGame h4,#rollDies h4{
+.newGameAndReset{
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#newGame h4,#rollDies h4,#reset h4{
     font-weight: 600;
     align-self: center;
 }
-#newGame img,#rollDies img,#hold img{
+#reset h4{
+    margin-left: 15px;
+}
+#newGame img,#rollDies img,#hold img,#reset img{
     width: 20px;
     margin-right: 10px;
 }
 #hold h4{
     margin-left: 15px;
+}
+.wining{
+    color: #fff;
+    position: absolute;
+    top: 15rem;
+    visibility: hidden;
+}
+.wining h2{
+    letter-spacing: 2px;
+    font-size: 2rem;
 }
 
