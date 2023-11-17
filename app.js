@@ -24,7 +24,7 @@ currentScore1 = 0
 currentScore2 = 0
 TotalScore1 = 0
 TotalScore2 = 0
-// Player1CurScore.textContent = 0*1 
+
 const rollDies = document.querySelector('#rollDies')
 const Dies = document.querySelector('#Dies').firstElementChild
 firstPlayer.classList.add('style')
@@ -82,32 +82,28 @@ player2Submit.addEventListener('click', () => {
 rollDies.addEventListener('click', () => {
     random = Math.ceil(Math.random() * 6)
     Dies.src = `./Assets/Images/${random}.png`
-    Dies.style.animation = "Roll 1s ease-in-out;"
-
+    Dies.classList.add('animat')
+    setTimeout(()=>{
+        Dies.classList.remove('animat')
+    },1000)
+    
     let audio = new Audio('./Assets/Audio/dice-142528.mp3')
     audio.play()
     if (random == 1) {
         if (playerone) {
             playerone = false
             Player1CurScore.textContent = 0
-            // player1TotScore.textContent = 0
-            // Dies.src = ""
             currentScore1 = 0
-            // TotalScore1 = 0
             firstPlayer.classList.remove('style')
             secondPlayer.classList.add('style')
         }
         else {
             Player2CurScore.textContent = 0
             playerone = true
-            // player2TotScore.textContent = 0
             currentScore2 = 0
-            // TotalScore2 = 0
             secondPlayer.classList.remove('style')
             firstPlayer.classList.add('style')
-            // Dies.src = ""
         }
-        // Player2CurScore.textContent = Player1CurScore.textContent
     }
     else {
         if (playerone) {
@@ -146,7 +142,8 @@ hold.addEventListener('click', () => {
             TotalScore2 = 0
             // alert("hello")
             newGame.style.display = "flex"
-
+            let winingAudio = new Audio('./Assets/Audio/JKL83NH-video-game-win.mp3')
+            winingAudio.play()
         }
     }
     else {
@@ -171,6 +168,8 @@ hold.addEventListener('click', () => {
             TotalScore1 = 0
             TotalScore2 = 0
             newGame.style.display = "flex"
+            let winingAudio = new Audio('./Assets/Audio/JKL83NH-video-game-win.mp3')
+            winingAudio.play()
         }
     }
 })
