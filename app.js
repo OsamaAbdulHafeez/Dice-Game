@@ -5,6 +5,7 @@ const player2 = document.querySelector('.player2')
 
 const newGame = document.querySelector('#newGame')
 const reset = document.querySelector('#reset')
+const resText = document.querySelector('#resText')
 const wining = document.querySelector('.wining')
 const form = document.querySelector('.form')
 const form2 = document.querySelector('.form2')
@@ -24,28 +25,30 @@ currentScore2 = 0
 TotalScore1 = 0
 TotalScore2 = 0
 // Player1CurScore.textContent = 0*1 
-
 const rollDies = document.querySelector('#rollDies')
 const Dies = document.querySelector('#Dies').firstElementChild
 firstPlayer.classList.add('style')
 // NewGame Function
 newGame.addEventListener('click', () => {
     form.style.top = "16rem"
+    wining.style.visibility = "hidden"
+    resText.textContent = "RESET"
 })
 
 reset.addEventListener('click', () => {
-    // newGame.style.visibility = "visible"
-    newGame.style.display = "flex"
-    player1.style.visibility = "hidden"
-    player2.style.visibility = "hidden"
-    rollandHold.style.visibility = "hidden"
-    reset.style.visibility = "hidden"
+    wining.style.visibility = "hidden"
+    player1.style.visibility = "visible"
+    player2.style.visibility = "visible"
+    rollandHold.style.visibility = "visible"
+    resText.textContent = "RESET"
+    // reset.children[2].textContent = "RESET"
     player1TotScore.textContent = 0
     player2TotScore.textContent = 0
     currentScore1 = 0
     currentScore2 = 0
     TotalScore1 = 0
     TotalScore2 = 0
+    newGame.style.display = "none"
 })
 // PlayerOne Name Function
 player1Submit.addEventListener('click', () => {
@@ -79,7 +82,10 @@ player2Submit.addEventListener('click', () => {
 rollDies.addEventListener('click', () => {
     random = Math.ceil(Math.random() * 6)
     Dies.src = `./Assets/Images/${random}.png`
+    Dies.style.animation = "Roll 1s ease-in-out;"
 
+    let audio = new Audio('./Assets/Audio/dice-142528.mp3')
+    audio.play()
     if (random == 1) {
         if (playerone) {
             playerone = false
@@ -131,7 +137,7 @@ hold.addEventListener('click', () => {
             player1.style.visibility = "hidden"
             player2.style.visibility = "hidden"
             rollandHold.style.visibility = "hidden"
-            reset.style.visibility = "hidden"
+            resText.textContent = "PLAY AGAIN"
             player1TotScore.textContent = 0
             player2TotScore.textContent = 0
             currentScore1 = 0
@@ -140,6 +146,7 @@ hold.addEventListener('click', () => {
             TotalScore2 = 0
             // alert("hello")
             newGame.style.display = "flex"
+
         }
     }
     else {
@@ -150,13 +157,13 @@ hold.addEventListener('click', () => {
         currentScore2 = 0
         secondPlayer.classList.remove('style')
         firstPlayer.classList.add('style')
-        if(TotalScore2>=50){
+        if (TotalScore2 >= 50) {
             wining.style.visibility = "visible"
             wining.firstElementChild.textContent = `${secondPlayer.textContent} Has Won`
             player1.style.visibility = "hidden"
             player2.style.visibility = "hidden"
             rollandHold.style.visibility = "hidden"
-            reset.style.visibility = "hidden"
+            resText.textContent = "PLAY AGAIN"
             player1TotScore.textContent = 0
             player2TotScore.textContent = 0
             currentScore1 = 0

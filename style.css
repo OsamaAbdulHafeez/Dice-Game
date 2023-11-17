@@ -15,6 +15,19 @@ body{
     
     /* left: 50%; */
 }
+/* .animat{
+    animation: Roll 1s ease-in-out;
+} */
+@keyframes Roll {
+    0%{
+        transform: rotate(0deg);
+    }
+    
+    100%{
+        transform: rotate(360deg);
+    }
+    
+}
 /* Form */
 .form,.form2{
     background-color: #fff;
